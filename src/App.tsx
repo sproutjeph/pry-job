@@ -1,8 +1,9 @@
 import { useAutocompleteSuggestions } from "./hooks/useAutocompleteSuggestions";
+import { ChevronDown, InfoIcon, MoreHorizontal, Plus } from "lucide-react";
 import { Card, CardHeader } from "./components/ui/card";
-import { ChevronDown, InfoIcon, MoreHorizontal } from "lucide-react";
-import { DatePicker } from "./components/DatePicker";
 import { CommandComp } from "./components/CommandCom";
+import { DatePicker } from "./components/DatePicker";
+import { Button } from "./components/ui/button";
 
 function App() {
   const { isLoading, suggestions } = useAutocompleteSuggestions();
@@ -32,6 +33,13 @@ function App() {
         </div>
         <div className="px-4 py-8">
           {suggestions && <CommandComp suggestions={suggestions} />}
+        </div>
+
+        <div className="m-2 ">
+          <Button variant="link" className="text-blue-400 text-xs py-0">
+            <Plus className="text-blue-400" height={18} width={18} /> Add Time
+            Segment
+          </Button>
         </div>
       </Card>
     </main>

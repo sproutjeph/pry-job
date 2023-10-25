@@ -2,7 +2,7 @@ import { create } from "zustand";
 
 type State = {
   savedItems: string[];
-  saveItem: (promoCode: string) => void;
+  saveItem: (item: string) => void;
 };
 
 const useSelectedItemStore = create<State>((set) => ({
